@@ -9,9 +9,10 @@ public abstract class Screen {
     protected String title;
     protected Pane view;
 
-    public Screen(String name)
+    public Screen(String name, String title)
     {
         this.view = this.getView(name);
+        this.title = title;
     }
 
     private Pane getView(String name)

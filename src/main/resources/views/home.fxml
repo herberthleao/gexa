@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Tab ?>
+<?import javafx.scene.control.TabPane ?>
+<?import javafx.scene.control.Label ?>
+<?import javafx.scene.layout.VBox ?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="me.herberthleao.gexa.controllers.HomeController"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="me.herberthleao.gexa.controllers.HomeController"
+>
+    <TabPane tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="checkoutTab" text="Caixa">
 
-</AnchorPane>
+        </Tab>
+        <Tab fx:id="stockTab" text="Estoque">
+            <fx:include fx:id="stockPanel" source="panels/stock.fxml" />
+        </Tab>
+    </TabPane>
+</VBox>
