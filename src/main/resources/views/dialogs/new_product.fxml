@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.ButtonType?>
+
+<?import me.herberthleao.gexa.controllers.ProductController?>
+
+<DialogPane
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="me.herberthleao.gexa.controllers.ProductController"
+>
+    <padding>
+        <Insets top="10" right="20" bottom="20" left="20" />
+    </padding>
+    <content>
+        <GridPane
+            hgap="20"
+            vgap="20"
+        >
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+            <VBox GridPane.rowIndex="1">
+                <Label text="Registrar Novo Produto" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="20" />
+                    </font>
+                </Label>
+                <Label>Por favor, insira os dados do produto:</Label>
+            </VBox>
+            <VBox GridPane.rowIndex="2">
+                <Label>Nome</Label>
+                <TextField fx:id="name" />
+            </VBox>
+            <VBox GridPane.rowIndex="3">
+                <Label>Valor</Label>
+                <TextField fx:id="price" />
+            </VBox>
+            <VBox GridPane.rowIndex="4">
+                <Label>Descrição</Label>
+                <TextArea fx:id="description" />
+            </VBox>
+            <VBox GridPane.rowIndex="5">
+                <Label>Código de Barras</Label>
+                <TextField fx:id="barcode" />
+            </VBox>
+        </GridPane>
+    </content>
+    <ButtonType fx:constant="CANCEL" />
+    <ProductController fx:constant="SAVE" />
+</DialogPane>

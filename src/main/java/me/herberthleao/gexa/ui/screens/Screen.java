@@ -1,32 +1,41 @@
 package me.herberthleao.gexa.ui.screens;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
+import javafx.scene.Parent;
 
 import java.io.IOException;
+import java.net.URL;
 
-public abstract class Screen {
+public abstract class Screen
+{
+    protected FXMLLoader loader;
     protected String title;
-    protected Pane view;
+    private final String view;
 
-    public Screen(String name, String title)
+    public Screen(String view, String title)
     {
-        this.view = this.getView(name);
+        this.view = view;
         this.title = title;
     }
 
-    private Pane getView(String name)
-    {
-        Pane resource = null;
-        try {
-            String path = String.format("/views/%s.fxml", name);
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource(path));
+    public abstract void show();
 
-            resource = loader.load();
+    protected Parent loadTemplate()
+    {
+        Parent element = null;
+        try {
+            String path = String.format("/views/%s.fxml", this.view);
+            URL resource = this.getClass().getResource(path);
+            if (resource != null) {
+                this.loader = new FXMLLoader(resource);
+                element = this.loader.load();
+            }
         } catch (IOException exception) {
             System.out.println(exception.getMessage());
         }
 
-        return resource;
+        return element;
     }
+
+    protected abstract void configure();
 }

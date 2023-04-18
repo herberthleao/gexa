@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button ?>
-<?import javafx.scene.control.ButtonBar ?>
-<?import javafx.scene.control.TableView ?>
-<?import javafx.scene.layout.BorderPane ?>
-<?import javafx.geometry.Insets ?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.skin.TableHeaderRow?>
+
 <BorderPane
     xmlns="http://javafx.com/javafx"
     xmlns:fx="http://javafx.com/fxml"
@@ -22,8 +21,11 @@
                 <Insets topRightBottomLeft="10" />
             </padding>
             <buttons>
-                <Button text="Registrar Produto" ButtonBar.buttonData="LEFT" />
-                <Button text="Registrar Entrada" ButtonBar.buttonData="LEFT" />
+                <Button
+                    text="Registrar Produto"
+                    ButtonBar.buttonData="LEFT"
+                    onAction="#openNewProductModal"
+                />
             </buttons>
         </ButtonBar>
     </top>
@@ -38,10 +40,7 @@
             <columns>
                 <TableColumn text="ID" />
                 <TableColumn text="Nome" />
-                <TableColumn text="Categoria" />
-                <TableColumn text="Quantidade" />
                 <TableColumn text="Valor" />
-                <TableColumn text="Validade" />
                 <TableColumn text="Descrição" />
             </columns>
         </TableView>

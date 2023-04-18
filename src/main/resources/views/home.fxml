@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab ?>
-<?import javafx.scene.control.TabPane ?>
-<?import javafx.scene.control.Label ?>
-<?import javafx.scene.layout.VBox ?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="me.herberthleao.gexa.controllers.HomeController"
+<VBox
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="me.herberthleao.gexa.controllers.HomeController"
 >
     <TabPane tabClosingPolicy="UNAVAILABLE">
-        <Tab fx:id="checkoutTab" text="Caixa">
+        <Tab text="Caixa">
 
         </Tab>
-        <Tab fx:id="stockTab" text="Estoque">
+        <Tab text="Estoque">
             <fx:include fx:id="stockPanel" source="panels/stock.fxml" />
         </Tab>
     </TabPane>
